@@ -1,0 +1,49 @@
+name: Autograding Tests
+on:
+  - push
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm install
+    - name: Test Ejercicio 7
+      id: test-ej7
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Test Ejercicio 7
+        setup-command: ''
+        command: npm test -- tests/ejercicio/7-api-json.test.js
+        timeout: 30
+        max-score: 1.0
+      continue-on-error: true
+    - name: Test Ejercicio 8
+      id: test-ej8
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Test Ejercicio 8
+        setup-command: ''
+        command: npm test -- tests/ejercicio/8-netlify.test.js
+        timeout: 30
+        max-score: 1.0
+      continue-on-error: true
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST-EJ7_RESULTS: "${{steps.test-ej7.outputs.result}}"
+        TEST-EJ8_RESULTS: "${{steps.test-ej8.outputs.result}}"
+      with:
+        runners: test-ej7,test-ej8

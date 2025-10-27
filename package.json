@@ -1,0 +1,19 @@
+{
+  "name": "html-exercises-classroom",
+  "version": "1.0.0",
+  "description": "Una colección de ejercicios básicos de HTML para GitHub Classroom.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "html",
+    "exercises",
+    "github-classroom"
+  ],
+  "author": "Daniel Parra",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.0"
+  }
+}
