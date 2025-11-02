@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f5f5f5;
+}
+
+.contenedor-principal{
+    text-align: center;
+}
+
+.card-img-top{ 
+    object-fit: contain; 
+    height: 180px; 
+}
+
+.badge-oferta{ 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+}
+
+.card{
+    width: 100%;
+    padding: 20px;
+}
+
+.carrucel .card{
+    border: none;
+    min-height: 250px;
+    justify-content: center;
+}
+
+.precioCarr{
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.btnslide{
+    background-color: #5f5e5e;
+    border-radius: 50px;
+}
+
+
+/* Catalogo */
+
+.img-catalogo{
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+.cd-catg{
+    text-align: left;
+    padding: 0 !important;
+}
+
+.cd-catg .card-title{
+    font-size: 12px;
+}
+
+.cd-catg .card-text{
+    color: #198754;
+    padding: 10px 0;
+}
+
+.card-footer{
+    padding: 0 !important;
+}
+
+
+/* tarjeta oferta */
+
+.img-ofert{
+    width: 220px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.cd-ofert{
+    text-align: left;
+    border: 1px solid #dc3545 !important;
+}
+
+.cd-ofert .card-body{
+    padding: 0;
+}
+
+.cd-ofert .card-title{
+    font-size: 15px;
+}
+
+.cd-ofert .card-text{
+    color: #dc3545;
+}
+
+.cd-ofert .btn{
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}
+
+.cd-ofert .btn:hover{
+    background-color: #a22532;
+    color: #fff;
+}
+
+.footer-ofert{
+    margin-top: 10px;
+}
+
+/* Carrucel */
+
+.detCarr{
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-fluid{
+    max-height: 200px;
+    object-fit: contain;
+}
+
+/* Detalle */
+
+.cd-detalle{
+    text-align: left;
+}
